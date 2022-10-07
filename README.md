@@ -1,2 +1,8 @@
-# snp-pandas-basic
-VSCode extension for basic Pandas snippets.
+# Snippington C# Basic
+VSCode extension for Pandas snippets.
+
+#### Shortcuts
+
+| Prefix | Description |
+| ------ | ------------ |
+| `pd: imp` | Import Pandas |

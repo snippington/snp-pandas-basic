@@ -1,0 +1,11 @@
+// Name: Pandas basic snippets.
+{
+	"Pandas Import": {
+        "scope": "python",
+        "prefix": "pd: imp",
+        "body": [
+                "import pandas as pd", 
+        ],
+        "description": "Import Pandas."
+    }
+}
