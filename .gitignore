@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Packaging script
+package.sh
+
+# Packaged snippet
+snp-go-pandas-*
