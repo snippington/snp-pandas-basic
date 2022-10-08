@@ -48,5 +48,61 @@
 		],
                 "description": "Show custom aggregate stats for columns."
         },
+        "Get Shape": {
+                "scope": "python",
+                "prefix": "pd: shape",
+		"body": [
+                        "#df is your dataframe.",
+			"df.shape"
+		],
+                "description": "Fetches the shape of your dataframe."
+        },
+        "Get Row Count": {
+                "scope": "python",
+                "prefix": "pd: row-count",
+		"body": [
+                        "#df is your dataframe.",
+			"rows_count = df.shape[0]"
+		],
+                "description": "Fetches the count of rows of your dataframe."
+        },
+        "Get Columns Count": {
+                "scope": "python",
+                "prefix": "pd: column-count",
+		"body": [
+                        "#df is your dataframe.",
+			"col_count = df.shape[1]"
+		],
+                "description": "Fetches the count of columns of your dataframe."
+        },
+        "First X Rows": {
+                "scope": "python",
+                "prefix": "pd: first-x-rows",
+		"body": [
+                        "#df is your dataframe.",
+			"first_x_rows = df[0:${1:5}]",
+                        "print(first_x_rows)"
+		],
+                "description": "First X Rows."
+        },
+        "Last X Rows": {
+                "scope": "python",
+                "prefix": "pd: last-x-rows",
+		"body": [
+                        "#df is your dataframe.",
+			"last_x_rows = df.tail(${1:10})",
+                        "print(last_x_rows)"
+		],
+                "description": "Last X Rows."
+        },
+        "Define Categories": {
+                "scope": "python",
+                "prefix": "pd: set-categories",
+		"body": [
+                        "#pd is your Pandas import alias (import pandas as pd)",
+			"categories = pd.Series([1,2,3], dtype=\"category\")"
+		],
+                "description": "Define categories with Pandas."
+        },
         
 }
