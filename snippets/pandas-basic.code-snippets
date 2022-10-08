@@ -28,7 +28,7 @@
                 "scope": "python",
                 "prefix": "pd: stats",
                 "body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
                         "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()", 
                 ],
                 "description": "Show aggregate stats for columns."
@@ -37,7 +37,7 @@
                 "scope": "python",
                 "prefix": "pd: stats-custom",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"df.agg(",
 			"\t{",
 			"\t\t\"${1:Column1}\": [\"min\", \"max\", \"median\", \"skew\"],",
@@ -52,7 +52,7 @@
                 "scope": "python",
                 "prefix": "pd: shape",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"df.shape"
 		],
                 "description": "Fetches the shape of your dataframe."
@@ -61,7 +61,7 @@
                 "scope": "python",
                 "prefix": "pd: row-count",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"rows_count = df.shape[0]"
 		],
                 "description": "Fetches the count of rows of your dataframe."
@@ -70,7 +70,7 @@
                 "scope": "python",
                 "prefix": "pd: column-count",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"col_count = df.shape[1]"
 		],
                 "description": "Fetches the count of columns of your dataframe."
@@ -79,7 +79,7 @@
                 "scope": "python",
                 "prefix": "pd: first-x-rows",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"first_x_rows = df[0:${1:5}]",
                         "print(first_x_rows)"
 		],
@@ -89,7 +89,7 @@
                 "scope": "python",
                 "prefix": "pd: last-x-rows",
 		"body": [
-                        "#df is your dataframe.",
+                        "#df is your dataframe",
 			"last_x_rows = df.tail(${1:10})",
                         "print(last_x_rows)"
 		],
@@ -103,6 +103,119 @@
 			"categories = pd.Series([1,2,3], dtype=\"category\")"
 		],
                 "description": "Define categories with Pandas."
+        },
+        "Frequency Distribution": {
+                "scope": "python",
+                "prefix": "pd: frequency-distribution",
+		"body": [
+                        "#df is your dataframe",
+			"df.${1:ColumnName}.value_counts(ascending = True) "
+		],
+                "description": "Get frequency distribution of values for a column."
+        },
+        "Sample Data": {
+                "scope": "python",
+                "prefix": "pd: data-sample",
+		"body": [
+                        "#df is your dataframe",
+                        "#frac is percentage of data to sample",
+                        "#0.2 is 20 percent",
+			"df.sample(frac = 0.2)"
+		],
+                "description": "Get a sample of data from your dataframe."
+        },
+        "Select Column": {
+                "scope": "python",
+                "prefix": "pd: column-select",
+		"body": [
+                        "#df is your dataframe",
+			"column = df[\"${1:ColumnName}\"]"
+		],
+                "description": "Select a specific column from dataframe."
+        },
+        "Select Columns": {
+                "scope": "python",
+                "prefix": "pd: column-select-multiple",
+		"body": [
+                        "#df is your dataframe",
+			"df[[\"${1:FirstColumnName}\",\"${2:SecondColumnName}\"]]"
+		],
+                "description": "Select multiple columns from dataframe."
+        },
+        "Select Rows Specific Columns": {
+                "scope": "python",
+                "prefix": "pd: rows-specific-columns",
+		"body": [
+                        "#df is your dataframe",
+                        "#0 is index of start row number, 5 is index of end row number,",
+			"df.loc[0:5,[\"\",\"${2:SecondColumnName}\"]]"
+		],
+                "description": "Select rows by indices for specific columns in dataframe."
+        },
+        "Rows By Index": {
+                "scope": "python",
+                "prefix": "pd: rows-by-index",
+		"body": [
+                        "#df is your dataframe",
+                        "#0 is index of start row number, 10 is index of end row number,",
+			"df.iloc[${1:0}:${2:10},:]"
+		],
+                "description": "Select rows by indices."
+        },
+        "Columns By Index": {
+                "scope": "python",
+                "prefix": "pd: columns-by-index",
+		"body": [
+                        "#df is your dataframe",
+                        "#0 is index of start column number, 5 is index of end column number,",
+			"df.iloc[:,${1:0}:${2:5}]"
+		],
+                "description": "Select columns by indices."
+        },
+        "Create Custom Dataframe": {
+                "scope": "python",
+                "prefix": "pd: dataframe-create",
+		"body": [
+			"df = pd.DataFrame({\"Player\" : [\"Sach\",\"KingK\",\"Zak\"], \"Role\" : [\"Master Batter\",\"Run Machine\",\"Speed Machine\"]})",
+		],
+		"description": "Create custom dataframe."
+        },
+        "Column Rename": {
+                "scope": "python",
+                "prefix": "pd: columns-rename",
+		"body": [
+                        "#df is your dataframe",
+			"df.columns = ['${1:NewColumnName}','${2:SecondNewColumnName}']",
+		],
+		"description": "Assign new column names to dataframe."
+        },
+        "Column Rename Specific": {
+                "scope": "python",
+                "prefix": "pd: columns-rename-specific",
+		"body": [
+                        "#df is your dataframe",
+			"df.rename(columns = {\"${1:OldColumnName}\":\"${2:NewColumnName}\"},inplace = True)",
+		],
+		"description": "Rename specific columns in dataframe."
+        },
+        "Drop Column": {
+                "scope": "python",
+                "prefix": "pd: columns-drop",
+		"body": [
+                        "#df is your dataframe",
+			"df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)",
+		],
+		"description": "Drop columns by name."
+        },
+        "Sort By Column": {
+                "scope": "python",
+                "prefix": "pd: sort-by-column",
+		"body": [
+                        "#df is your dataframe",
+                        "#set inplace = True as needed",
+			"df.sort_values(\"${1:ColumnNameOne}\",ascending = True, inplace = False)",
+		],
+		"description": "Sort values by column."
         },
         
 }

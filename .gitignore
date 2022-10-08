@@ -132,4 +132,4 @@ dmypy.json
 package.sh
 
 # Packaged snippet
-snp-go-pandas-*
+snp-pandas-*

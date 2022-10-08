@@ -16,3 +16,15 @@ VSCode extension for Pandas snippets.
 | `pd: first-x-rows` | Get the first x rows of dataframe |
 | `pd: last-x-rows` | Get the last x rows of dataframe |
 | `pd: set-categories` | Define categories |
+| `pd: frequency-distribution` | Get frequency distribution of values for a column |
+| `pd: data-sample` | Get sample of data from dataframe |
+| `pd: column-select` | Select single column from dataframe |
+| `pd: column-select-multiple` | Select multiple columns from dataframe |
+| `pd: rows-specific-columns` | Select rows by indices for specific column names in dataframe |
+| `pd: rows-by-index` | Select rows from dataframe by indices |
+| `pd: columns-by-index` | Select columns from dataframe by indices |
+| `pd: dataframe-create` | Create custom dataframe |
+| `pd: columns-rename` | Assign new column names to dataframe |
+| `pd: columns-rename-specific` | Assign new column names to specific columns in dataframe |
+| `pd: columns-drop` | Drop columns by name |
+| `pd: sort-by-column` | Sort values in dataframe by column |
