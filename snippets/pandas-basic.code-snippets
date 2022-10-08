@@ -1,27 +1,52 @@
 // Name: Pandas basic snippets.
 {
         "Pandas Import": {
-        "scope": "python",
-        "prefix": "pd: imp",
-        "body": [
-                "import pandas as pd", 
-        ],
-        "description": "Import Pandas."
+                "scope": "python",
+                "prefix": "pd: imp",
+                "body": [
+                        "import pandas as pd", 
+                ],
+                "description": "Import Pandas."
         },
         "Read CSV": {
-        "scope": "python",
-        "prefix": "pd: read-csv",
-        "body": [
-                "pd.read_csv(\"${1:sample.csv}\")", 
-        ],
-        "description": "Read CSV File."
+                "scope": "python",
+                "prefix": "pd: read-csv",
+                "body": [
+                        "df = pd.read_csv(\"${1:sample.csv}\")", 
+                ],
+                "description": "Read CSV File."
         },
         "Read CSV Skiprows": {
-        "scope": "python",
-        "prefix": "pd: read-csv-skiprows",
-        "body": [
-                "pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)", 
-        ],
-        "description": "Read CSV File with Row Skipping."
-        }
+                "scope": "python",
+                "prefix": "pd: read-csv-skiprows",
+                "body": [
+                        "df = pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)", 
+                ],
+                "description": "Read CSV File with Row Skipping."
+        },
+        "Get Stats": {
+                "scope": "python",
+                "prefix": "pd: stats",
+                "body": [
+                        "#df is your dataframe.",
+                        "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()", 
+                ],
+                "description": "Show aggregate stats for columns."
+        },
+        "Get Stats Specific": {
+                "scope": "python",
+                "prefix": "pd: stats-custom",
+		"body": [
+                        "#df is your dataframe.",
+			"df.agg(",
+			"\t{",
+			"\t\t\"${1:Column1}\": [\"min\", \"max\", \"median\", \"skew\"],",
+			"\t\t\"${1:Column2}\": [\"min\", \"max\", \"median\", \"mean\"],",
+			"\t}",
+			")",
+			""
+		],
+                "description": "Show custom aggregate stats for columns."
+        },
+        
 }
