@@ -1,11 +1,27 @@
 // Name: Pandas basic snippets.
 {
-	"Pandas Import": {
+        "Pandas Import": {
         "scope": "python",
         "prefix": "pd: imp",
         "body": [
                 "import pandas as pd", 
         ],
         "description": "Import Pandas."
-    }
+        },
+        "Read CSV": {
+        "scope": "python",
+        "prefix": "pd: read-csv",
+        "body": [
+                "pd.read_csv(\"${1:sample.csv}\")", 
+        ],
+        "description": "Read CSV File."
+        },
+        "Read CSV Skiprows": {
+        "scope": "python",
+        "prefix": "pd: read-csv-skiprows",
+        "body": [
+                "pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)", 
+        ],
+        "description": "Read CSV File with Row Skipping."
+        }
 }
