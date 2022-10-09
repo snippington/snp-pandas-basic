@@ -1,4 +1,4 @@
-# Snippington C# Basic
+# Snippington Python Pandas Basic
 VSCode extension for Pandas snippets.
 
 #### Shortcuts
@@ -28,3 +28,4 @@ VSCode extension for Pandas snippets.
 | `pd: columns-rename-specific` | Assign new column names to specific columns in dataframe |
 | `pd: columns-drop` | Drop columns by name |
 | `pd: sort-by-column` | Sort values in dataframe by column |
+| `pd: filter` | Filter dataframe based on condition/match |

@@ -217,5 +217,14 @@
 		],
 		"description": "Sort values by column."
         },
+        "Filter Dataframe": {
+                "scope": "python",
+                "prefix": "pd: filter",
+		"body": [
+                        "#df is your dataframe",
+			"df[df.${1:ColumnName} == \"${2:SomeValue}\"]",
+		],
+		"description": "Filter dataframe based on condition/match."
+        },
         
 }
