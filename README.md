@@ -33,3 +33,7 @@ VSCode extension for Pandas snippets.
 | `pd: apply-single-column` | Apply function to a specific column |
 | `pd: apply-multiple-columns` | Apply function to multiple columns |
 | `pd: apply-column-lambda` | Apply lambda function to column |
+| `pd: convert-numeric` | Convert all columns to numeric type |
+| `pd: convert-column-numeric` | Convert a single column to numeric type |
+| `pd: convert-columns-numeric` | Convert multiple columns to numeric type |
+| `pd: set-data-types` | Assign data types to columns |

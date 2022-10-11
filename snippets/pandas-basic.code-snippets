@@ -4,7 +4,7 @@
                 "scope": "python",
                 "prefix": "pd: imp",
                 "body": [
-                        "import pandas as pd", 
+                        "import pandas as pd" 
                 ],
                 "description": "Import Pandas."
         },
@@ -12,7 +12,7 @@
                 "scope": "python",
                 "prefix": "pd: read-csv",
                 "body": [
-                        "df = pd.read_csv(\"${1:sample.csv}\")", 
+                        "df = pd.read_csv(\"${1:sample.csv}\")"
                 ],
                 "description": "Read CSV File."
         },
@@ -20,7 +20,7 @@
                 "scope": "python",
                 "prefix": "pd: read-csv-skiprows",
                 "body": [
-                        "df = pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)", 
+                        "df = pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)" 
                 ],
                 "description": "Read CSV File with Row Skipping."
         },
@@ -29,7 +29,7 @@
                 "prefix": "pd: stats",
                 "body": [
                         "#df is your dataframe",
-                        "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()", 
+                        "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()"
                 ],
                 "description": "Show aggregate stats for columns."
         },
@@ -43,8 +43,7 @@
 			"\t\t\"${1:Column1}\": [\"min\", \"max\", \"median\", \"skew\"],",
 			"\t\t\"${1:Column2}\": [\"min\", \"max\", \"median\", \"mean\"],",
 			"\t}",
-			")",
-			""
+			")"
 		],
                 "description": "Show custom aggregate stats for columns."
         },
@@ -109,7 +108,7 @@
                 "prefix": "pd: frequency-distribution",
 		"body": [
                         "#df is your dataframe",
-			"df.${1:ColumnName}.value_counts(ascending = True) "
+			"df.${1:ColumnName}.value_counts(ascending = True)"
 		],
                 "description": "Get frequency distribution of values for a column."
         },
@@ -176,7 +175,7 @@
                 "scope": "python",
                 "prefix": "pd: dataframe-create",
 		"body": [
-			"df = pd.DataFrame({\"Player\" : [\"Sach\",\"KingK\",\"Zak\"], \"Role\" : [\"Master Batter\",\"Run Machine\",\"Speed Machine\"]})",
+			"df = pd.DataFrame({\"Player\" : [\"Sach\",\"KingK\",\"Zak\"], \"Role\" : [\"Master Batter\",\"Run Machine\",\"Speed Machine\"]})"
 		],
 		"description": "Create custom dataframe."
         },
@@ -185,7 +184,7 @@
                 "prefix": "pd: columns-rename",
 		"body": [
                         "#df is your dataframe",
-			"df.columns = ['${1:NewColumnName}','${2:SecondNewColumnName}']",
+			"df.columns = ['${1:NewColumnName}','${2:SecondNewColumnName}']"
 		],
 		"description": "Assign new column names to dataframe."
         },
@@ -194,7 +193,7 @@
                 "prefix": "pd: columns-rename-specific",
 		"body": [
                         "#df is your dataframe",
-			"df.rename(columns = {\"${1:OldColumnName}\":\"${2:NewColumnName}\"},inplace = True)",
+			"df.rename(columns = {\"${1:OldColumnName}\":\"${2:NewColumnName}\"},inplace = False)"
 		],
 		"description": "Rename specific columns in dataframe."
         },
@@ -203,7 +202,7 @@
                 "prefix": "pd: columns-drop",
 		"body": [
                         "#df is your dataframe",
-			"df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)",
+			"df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)"
 		],
 		"description": "Drop columns by name."
         },
@@ -213,7 +212,7 @@
 		"body": [
                         "#df is your dataframe",
                         "#set inplace = True as needed",
-			"df.sort_values(\"${1:ColumnNameOne}\",ascending = True, inplace = False)",
+			"df.sort_values(\"${1:ColumnNameOne}\",ascending = True, inplace = False)"
 		],
 		"description": "Sort values by column."
         },
@@ -222,7 +221,7 @@
                 "prefix": "pd: filter",
 		"body": [
                         "#df is your dataframe",
-			"df[df.${1:ColumnName} == \"${2:SomeValue}\"]",
+			"df[df.${1:ColumnName} == \"${2:SomeValue}\"]"
 		],
 		"description": "Filter dataframe based on condition/match."
         },
@@ -235,8 +234,7 @@
 			"",
 			"#df is your dataframe",
 			"#example function is applicable for all INT dataframe ",
-			"df_squared = df.apply(${1:yourFunction})",
-			""
+			"df_squared = df.apply(${1:yourFunction})"
 		],
 		"description": "Apply function to all elements in the dataframe.",
 	},
@@ -248,8 +246,7 @@
 			"   return x*x",
 			"",
 			"#df is your dataframe",
-			"df[\"${1:ColumnName}\"] = df[\"${1}\"].apply(${2:yourFunction})",
-			""
+			"df[\"${1:ColumnName}\"] = df[\"${1}\"].apply(${2:yourFunction})"
 		],
 		"description": "Apply function to single column."
 	},
@@ -261,8 +258,7 @@
 			"   return x*x",
 			"",
 			"#df is your dataframe",
-			"df[[\"${1:ColumnOne}\",\"${2:ColumnTwo}\"]] = df[[\"${1}\",\"${2}\"]].apply(${3:yourFunction})",
-			""
+			"df[[\"${1:ColumnOne}\",\"${2:ColumnTwo}\"]] = df[[\"${1}\",\"${2}\"]].apply(${3:yourFunction})"
 		],
 		"description": "Apply function to multiple columns."
 	},
@@ -271,10 +267,54 @@
 		"prefix": "pd: apply-column-lambda",
 		"body": [
 			"#df is your dataframe",
-			"df[\"${1:ColumnOne}\"] = df[\"${1}\"].apply(lambda x: x*x)",
-			""
+			"df[\"${1:ColumnOne}\"] = df[\"${1}\"].apply(lambda x: x*x)"
 		],
 		"description": "Apply inline function/lambda to a column."
+	},
+        "Convert All Numeric": {
+		"scope": "python",
+		"prefix": "pd: convert-numeric",
+		"body": [
+			"#df is your dataframe",
+                        "#pd is pandas import",
+			"df = df.apply(pd.to_numeric)"
+		],
+		"description": "Convert all columns to Numeric type."
+	},
+        "Convert Column to Numeric": {
+		"scope": "python",
+		"prefix": "pd: convert-column-numeric",
+		"body": [
+			"#df is your dataframe",
+                        "#pd is pandas import",
+			"df[\"${1:ColumnOne}\"] = pd.to_numeric(df[\"${1:ColumnOne}\"])"
+		],
+		"description": "Convert a column to numeric type."
+	},
+        "Convert Columns to Numeric": {
+		"scope": "python",
+		"prefix": "pd: convert-columns-numeric",
+		"body": [
+			"#df is your dataframe",
+                        "#pd is pandas import",
+			"df[[\"${1:ColumnOne}\", \"${2:ColumnTwo}\"]] = df[[\"${1}\", \"${2}\"]].apply(pd.to_numeric)"
+		],
+		"description": "Convert multiple columns to numeric type."
+	},
+        "Set Column Types": {
+		"scope": "python",
+		"prefix": "pd: set-data-types",
+		"body": [
+			"#df is your dataframe",
+			"df = df.astype(",
+			"\t{",
+			"\t\t'${1:ColumnOne}': 'float', ",
+			"\t\t'${2:ColumnTwo}': 'int',",
+			"\t\t'${3:ColumnThree}': 'datetime',",
+			"\t\t'${4:ColumnFour}': 'string'",
+			"\t}",
+			")"
+		],
+		"description": "Assign data types to columns."
 	}
-        
 }
