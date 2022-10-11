@@ -31,3 +31,4 @@ VSCode extension for Pandas snippets.
 | `pd: filter` | Filter dataframe based on condition/match |
 | `pd: apply-all` | Apply function to all of dataframe |
 | `pd: apply-single-column` | Apply function to a specific column |
+| `pd: apply-multiple-columns` | Apply function to multiple columns |

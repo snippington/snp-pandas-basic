@@ -252,6 +252,19 @@
 			""
 		],
 		"description": "Apply function to single column."
+	},
+	"Apply Function Multiple Columns": {
+                "scope": "python",
+                "prefix": "pd: apply-multiple-columns",
+		"body": [
+			"def ${3}(x):",
+			"   return x*x",
+			"",
+			"#df is your dataframe",
+			"df[[\"${1:ColumnOne}\",\"${2:ColumnTwo}\"]] = df[[\"${1}\",\"${2}\"]].apply(${3:yourFunction})",
+			""
+		],
+		"description": "Apply function to multiple columns."
 	}
         
 }
