@@ -265,6 +265,16 @@
 			""
 		],
 		"description": "Apply function to multiple columns."
+	},
+        "Apply Column Lambda": {
+		"scope": "python",
+		"prefix": "pd: apply-column-lambda",
+		"body": [
+			"#df is your dataframe",
+			"df[\"${1:ColumnOne}\"] = df[\"${1}\"].apply(lambda x: x*x)",
+			""
+		],
+		"description": "Apply inline function/lambda to a column."
 	}
         
 }

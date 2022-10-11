@@ -32,3 +32,4 @@ VSCode extension for Pandas snippets.
 | `pd: apply-all` | Apply function to all of dataframe |
 | `pd: apply-single-column` | Apply function to a specific column |
 | `pd: apply-multiple-columns` | Apply function to multiple columns |
+| `pd: apply-column-lambda` | Apply lambda function to column |
