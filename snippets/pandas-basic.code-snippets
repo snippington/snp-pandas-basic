@@ -226,5 +226,32 @@
 		],
 		"description": "Filter dataframe based on condition/match."
         },
+	"Apply Function to All": {
+		"scope": "python",
+		"prefix": "pd: apply-all",
+		"body": [
+			"def ${1}(x):",
+			"   return x*x",
+			"",
+			"#df is your dataframe",
+			"#example function is applicable for all INT dataframe ",
+			"df_squared = df.apply(${1:yourFunction})",
+			""
+		],
+		"description": "Apply function to all elements in the dataframe.",
+	},
+	"Apply Function Single Column": {
+		"scope": "python",
+		"prefix": "pd: apply-single-column",
+		"body": [
+			"def ${2}(x):",
+			"   return x*x",
+			"",
+			"#df is your dataframe",
+			"df[\"${1:ColumnName}\"] = df[\"${1}\"].apply(${2:yourFunction})",
+			""
+		],
+		"description": "Apply function to single column."
+	}
         
 }

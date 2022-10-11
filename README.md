@@ -29,3 +29,5 @@ VSCode extension for Pandas snippets.
 | `pd: columns-drop` | Drop columns by name |
 | `pd: sort-by-column` | Sort values in dataframe by column |
 | `pd: filter` | Filter dataframe based on condition/match |
+| `pd: apply-all` | Apply function to all of dataframe |
+| `pd: apply-single-column` | Apply function to a specific column |
