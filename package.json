@@ -3,7 +3,7 @@
   "displayName": "Pandas Basic Snippets",
   "description": "Basic snippets for development with Pandas package.",
   "icon": "images/snp_pandas_basic.png",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.71.0"
   },
