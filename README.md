@@ -38,3 +38,4 @@ VSCode extension for Pandas snippets.
 | `pd: convert-columns-numeric` | Convert multiple columns to numeric type |
 | `pd: set-data-types` | Assign data types to columns |
 | `pd: fill-mean` | Fill mean value in place of missing values |
+| `pd: fill-median` | Fill median value in place of missing values |
