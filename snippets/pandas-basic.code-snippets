@@ -316,5 +316,14 @@
 			")"
 		],
 		"description": "Assign data types to columns."
+	},
+        "Column Fill Mean Value": {
+		"scope": "python",
+		"prefix": "pd: fill-mean",
+		"body": [
+			"#df is your dataframe",
+			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mean().round(1), inplace=False)"
+		],
+		"description": "Fill mean value in place of missing values in column."
 	}
 }
