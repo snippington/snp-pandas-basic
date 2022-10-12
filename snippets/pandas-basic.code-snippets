@@ -324,7 +324,7 @@
 			"#df is your dataframe",
 			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mean().round(1), inplace=False)"
 		],
-		"description": "Fill mean value in place of missing values in column."
+		"description": "Fill mean value in place of missing values in dataframe column."
 	},
         "Column Fill Median Value": {
 		"scope": "python",
@@ -333,6 +333,15 @@
 			"#df is your dataframe",
 			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].median().round(1), inplace=False)"
 		],
-		"description": "Fill median value in place of missing values in column."
+		"description": "Fill median value in place of missing values in dataframe column."
+	},
+        "Column Fill Modal Value": {
+		"scope": "python",
+		"prefix": "pd: missing-fill-mode",
+		"body": [
+			"#df is your dataframe",
+			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mode()[0], inplace=False)"
+		],
+		"description": "Fill modal value in place of missing values in dataframe column."
 	}
 }
