@@ -40,3 +40,5 @@ VSCode extension for Pandas snippets.
 | `pd: fill-mean` | Fill missing values with mean values |
 | `pd: fill-median` | Fill missing values with median values |
 | `pd: fill-mode` | Fill missing values with modal values |
+| `pd: write-to-excel` | Write dataframe to Excel file |
+| `pd: write-to-csv` | Write dataframe to CSV file |

@@ -343,5 +343,24 @@
 			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mode()[0], inplace=False)"
 		],
 		"description": "Fill modal value in place of missing values in dataframe column."
+	},
+        "Write To Excel": {
+		"scope": "python",
+		"prefix": "pd: write-to-excel",
+		"body": [
+                        "#requires openpyxl package",
+			"#df is your dataframe",
+			"df.to_excel(\"$1{:output.xlsx}\", sheet_name='${2:SheetName}', index=False)"
+		],
+		"description": "Output your dataframe to an Excel file and specific sheet."
+	},
+        "Write To CSV": {
+		"scope": "python",
+		"prefix": "pd: write-to-csv",
+		"body": [
+			"#df is your dataframe",
+			"df.to_csv($1{:output.csv}, sep=',', encoding='utf-8', index=False)"
+		],
+		"description": "Output your dataframe to a CSV file."
 	}
 }
