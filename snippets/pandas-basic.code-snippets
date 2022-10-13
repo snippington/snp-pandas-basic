@@ -1,366 +1,375 @@
-// Name: Pandas basic snippets.
 {
-        "Pandas Import": {
-                "scope": "python",
-                "prefix": "pd: imp",
-                "body": [
-                        "import pandas as pd" 
-                ],
-                "description": "Import Pandas."
-        },
-        "Read CSV": {
-                "scope": "python",
-                "prefix": "pd: read-csv",
-                "body": [
-                        "df = pd.read_csv(\"${1:sample.csv}\")"
-                ],
-                "description": "Read CSV File."
-        },
-        "Read CSV Skiprows": {
-                "scope": "python",
-                "prefix": "pd: read-csv-skiprows",
-                "body": [
-                        "df = pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)" 
-                ],
-                "description": "Read CSV File with Row Skipping."
-        },
-        "Get Stats": {
-                "scope": "python",
-                "prefix": "pd: stats",
-                "body": [
-                        "#df is your dataframe",
-                        "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()"
-                ],
-                "description": "Show aggregate stats for columns."
-        },
-        "Get Stats Specific": {
-                "scope": "python",
-                "prefix": "pd: stats-custom",
-		"body": [
-                        "#df is your dataframe",
-			"df.agg(",
-			"\t{",
-			"\t\t\"${1:Column1}\": [\"min\", \"max\", \"median\", \"skew\"],",
-			"\t\t\"${1:Column2}\": [\"min\", \"max\", \"median\", \"mean\"],",
-			"\t}",
-			")"
-		],
-                "description": "Show custom aggregate stats for columns."
-        },
-        "Get Shape": {
-                "scope": "python",
-                "prefix": "pd: shape",
-		"body": [
-                        "#df is your dataframe",
-			"df.shape"
-		],
-                "description": "Fetches the shape of your dataframe."
-        },
-        "Get Row Count": {
-                "scope": "python",
-                "prefix": "pd: row-count",
-		"body": [
-                        "#df is your dataframe",
-			"rows_count = df.shape[0]"
-		],
-                "description": "Fetches the count of rows of your dataframe."
-        },
-        "Get Columns Count": {
-                "scope": "python",
-                "prefix": "pd: column-count",
-		"body": [
-                        "#df is your dataframe",
-			"col_count = df.shape[1]"
-		],
-                "description": "Fetches the count of columns of your dataframe."
-        },
-        "First X Rows": {
-                "scope": "python",
-                "prefix": "pd: first-x-rows",
-		"body": [
-                        "#df is your dataframe",
-			"first_x_rows = df[0:${1:5}]",
-                        "print(first_x_rows)"
-		],
-                "description": "First X Rows."
-        },
-        "Last X Rows": {
-                "scope": "python",
-                "prefix": "pd: last-x-rows",
-		"body": [
-                        "#df is your dataframe",
-			"last_x_rows = df.tail(${1:10})",
-                        "print(last_x_rows)"
-		],
-                "description": "Last X Rows."
-        },
-        "Define Categories": {
-                "scope": "python",
-                "prefix": "pd: set-categories",
-		"body": [
-                        "#pd is your Pandas import alias (import pandas as pd)",
-			"categories = pd.Series([1,2,3], dtype=\"category\")"
-		],
-                "description": "Define categories with Pandas."
-        },
-        "Frequency Distribution": {
-                "scope": "python",
-                "prefix": "pd: frequency-distribution",
-		"body": [
-                        "#df is your dataframe",
-			"df.${1:ColumnName}.value_counts(ascending = True)"
-		],
-                "description": "Get frequency distribution of values for a column."
-        },
-        "Sample Data": {
-                "scope": "python",
-                "prefix": "pd: data-sample",
-		"body": [
-                        "#df is your dataframe",
-                        "#frac is percentage of data to sample",
-                        "#0.2 is 20 percent",
-			"df.sample(frac = 0.2)"
-		],
-                "description": "Get a sample of data from your dataframe."
-        },
-        "Select Column": {
-                "scope": "python",
-                "prefix": "pd: column-select",
-		"body": [
-                        "#df is your dataframe",
-			"column = df[\"${1:ColumnName}\"]"
-		],
-                "description": "Select a specific column from dataframe."
-        },
-        "Select Columns": {
-                "scope": "python",
-                "prefix": "pd: column-select-multiple",
-		"body": [
-                        "#df is your dataframe",
-			"df[[\"${1:FirstColumnName}\",\"${2:SecondColumnName}\"]]"
-		],
-                "description": "Select multiple columns from dataframe."
-        },
-        "Select Rows Specific Columns": {
-                "scope": "python",
-                "prefix": "pd: rows-specific-columns",
-		"body": [
-                        "#df is your dataframe",
-                        "#0 is index of start row number, 5 is index of end row number,",
-			"df.loc[0:5,[\"\",\"${2:SecondColumnName}\"]]"
-		],
-                "description": "Select rows by indices for specific columns in dataframe."
-        },
-        "Rows By Index": {
-                "scope": "python",
-                "prefix": "pd: rows-by-index",
-		"body": [
-                        "#df is your dataframe",
-                        "#0 is index of start row number, 10 is index of end row number,",
-			"df.iloc[${1:0}:${2:10},:]"
-		],
-                "description": "Select rows by indices."
-        },
-        "Columns By Index": {
-                "scope": "python",
-                "prefix": "pd: columns-by-index",
-		"body": [
-                        "#df is your dataframe",
-                        "#0 is index of start column number, 5 is index of end column number,",
-			"df.iloc[:,${1:0}:${2:5}]"
-		],
-                "description": "Select columns by indices."
-        },
-        "Create Custom Dataframe": {
-                "scope": "python",
-                "prefix": "pd: dataframe-create",
-		"body": [
-			"df = pd.DataFrame({\"Player\" : [\"Sach\",\"KingK\",\"Zak\"], \"Role\" : [\"Master Batter\",\"Run Machine\",\"Speed Machine\"]})"
-		],
-		"description": "Create custom dataframe."
-        },
-        "Column Rename": {
-                "scope": "python",
-                "prefix": "pd: columns-rename",
-		"body": [
-                        "#df is your dataframe",
-			"df.columns = ['${1:NewColumnName}','${2:SecondNewColumnName}']"
-		],
-		"description": "Assign new column names to dataframe."
-        },
-        "Column Rename Specific": {
-                "scope": "python",
-                "prefix": "pd: columns-rename-specific",
-		"body": [
-                        "#df is your dataframe",
-			"df.rename(columns = {\"${1:OldColumnName}\":\"${2:NewColumnName}\"},inplace = False)"
-		],
-		"description": "Rename specific columns in dataframe."
-        },
-        "Drop Column": {
-                "scope": "python",
-                "prefix": "pd: columns-drop",
-		"body": [
-                        "#df is your dataframe",
-			"df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)"
-		],
-		"description": "Drop columns by name."
-        },
-        "Sort By Column": {
-                "scope": "python",
-                "prefix": "pd: sort-by-column",
-		"body": [
-                        "#df is your dataframe",
-                        "#set inplace = True as needed",
-			"df.sort_values(\"${1:ColumnNameOne}\",ascending = True, inplace = False)"
-		],
-		"description": "Sort values by column."
-        },
-        "Filter Dataframe": {
-                "scope": "python",
-                "prefix": "pd: filter",
-		"body": [
-                        "#df is your dataframe",
-			"df[df.${1:ColumnName} == \"${2:SomeValue}\"]"
-		],
-		"description": "Filter dataframe based on condition/match."
-        },
-	"Apply Function to All": {
-		"scope": "python",
-		"prefix": "pd: apply-all",
-		"body": [
-			"def ${1}(x):",
-			"   return x*x",
-			"",
-			"#df is your dataframe",
-			"#example function is applicable for all INT dataframe ",
-			"df_squared = df.apply(${1:yourFunction})"
-		],
-		"description": "Apply function to all elements in the dataframe.",
-	},
-	"Apply Function Single Column": {
-		"scope": "python",
-		"prefix": "pd: apply-single-column",
-		"body": [
-			"def ${2}(x):",
-			"   return x*x",
-			"",
-			"#df is your dataframe",
-			"df[\"${1:ColumnName}\"] = df[\"${1}\"].apply(${2:yourFunction})"
-		],
-		"description": "Apply function to single column."
-	},
-	"Apply Function Multiple Columns": {
-                "scope": "python",
-                "prefix": "pd: apply-multiple-columns",
-		"body": [
-			"def ${3}(x):",
-			"   return x*x",
-			"",
-			"#df is your dataframe",
-			"df[[\"${1:ColumnOne}\",\"${2:ColumnTwo}\"]] = df[[\"${1}\",\"${2}\"]].apply(${3:yourFunction})"
-		],
-		"description": "Apply function to multiple columns."
-	},
-        "Apply Column Lambda": {
-		"scope": "python",
-		"prefix": "pd: apply-column-lambda",
-		"body": [
-			"#df is your dataframe",
-			"df[\"${1:ColumnOne}\"] = df[\"${1}\"].apply(lambda x: x*x)"
-		],
-		"description": "Apply inline function/lambda to a column."
-	},
-        "Convert All Numeric": {
-		"scope": "python",
-		"prefix": "pd: convert-numeric",
-		"body": [
-			"#df is your dataframe",
-                        "#pd is pandas import",
-			"df = df.apply(pd.to_numeric)"
-		],
-		"description": "Convert all columns to Numeric type."
-	},
-        "Convert Column to Numeric": {
-		"scope": "python",
-		"prefix": "pd: convert-column-numeric",
-		"body": [
-			"#df is your dataframe",
-                        "#pd is pandas import",
-			"df[\"${1:ColumnOne}\"] = pd.to_numeric(df[\"${1:ColumnOne}\"])"
-		],
-		"description": "Convert a column to numeric type."
-	},
-        "Convert Columns to Numeric": {
-		"scope": "python",
-		"prefix": "pd: convert-columns-numeric",
-		"body": [
-			"#df is your dataframe",
-                        "#pd is pandas import",
-			"df[[\"${1:ColumnOne}\", \"${2:ColumnTwo}\"]] = df[[\"${1}\", \"${2}\"]].apply(pd.to_numeric)"
-		],
-		"description": "Convert multiple columns to numeric type."
-	},
-        "Set Column Types": {
-		"scope": "python",
-		"prefix": "pd: set-data-types",
-		"body": [
-			"#df is your dataframe",
-			"df = df.astype(",
-			"\t{",
-			"\t\t'${1:ColumnOne}': 'float', ",
-			"\t\t'${2:ColumnTwo}': 'int',",
-			"\t\t'${3:ColumnThree}': 'datetime',",
-			"\t\t'${4:ColumnFour}': 'string'",
-			"\t}",
-			")"
-		],
-		"description": "Assign data types to columns."
-	},
-        "Column Fill Mean Value": {
-		"scope": "python",
-		"prefix": "pd: missing-fill-mean",
-		"body": [
-			"#df is your dataframe",
-			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mean().round(1), inplace=False)"
-		],
-		"description": "Fill mean value in place of missing values in dataframe column."
-	},
-        "Column Fill Median Value": {
-		"scope": "python",
-		"prefix": "pd: missing-fill-median",
-		"body": [
-			"#df is your dataframe",
-			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].median().round(1), inplace=False)"
-		],
-		"description": "Fill median value in place of missing values in dataframe column."
-	},
-        "Column Fill Modal Value": {
-		"scope": "python",
-		"prefix": "pd: missing-fill-mode",
-		"body": [
-			"#df is your dataframe",
-			"df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mode()[0], inplace=False)"
-		],
-		"description": "Fill modal value in place of missing values in dataframe column."
-	},
-        "Write To Excel": {
-		"scope": "python",
-		"prefix": "pd: write-to-excel",
-		"body": [
-                        "#requires openpyxl package",
-			"#df is your dataframe",
-			"df.to_excel(\"${1:output.xlsx}\", sheet_name='${2:SheetName}', index=False)"
-		],
-		"description": "Output your dataframe to an Excel file and specific sheet."
-	},
-        "Write To CSV": {
-		"scope": "python",
-		"prefix": "pd: write-to-csv",
-		"body": [
-			"#df is your dataframe",
-			"df.to_csv(\"${1:output.csv}\", sep=',', encoding='utf-8', index=False)"
-		],
-		"description": "Output your dataframe to a CSV file."
-	}
+    "Pandas Import": {
+        "scope": "python",
+        "prefix": "pd: imp",
+        "body": [
+            "import pandas as pd"
+        ],
+        "description": "Import Pandas."
+    },
+    "Read CSV": {
+        "scope": "python",
+        "prefix": "pd: read-csv",
+        "body": [
+            "df = pd.read_csv(\"${1:sample.csv}\")"
+        ],
+        "description": "Read CSV File."
+    },
+    "Read CSV Skiprows": {
+        "scope": "python",
+        "prefix": "pd: read-csv-skiprows",
+        "body": [
+            "df = pd.read_csv(\"${1:sample.csv}\", skiprows=lambda x: x % 2 != 0)"
+        ],
+        "description": "Read CSV File with Row Skipping."
+    },
+    "Get Stats": {
+        "scope": "python",
+        "prefix": "pd: stats",
+        "body": [
+            "#df is your dataframe",
+            "df[[\"${1:Column1}\", \"${2:Column2}\"]].describe()"
+        ],
+        "description": "Show aggregate stats for columns."
+    },
+    "Get Stats Specific": {
+        "scope": "python",
+        "prefix": "pd: stats-custom",
+        "body": [
+            "#df is your dataframe",
+            "df.agg(",
+            "\t{",
+            "\t\t\"${1:Column1}\": [\"min\", \"max\", \"median\", \"skew\"],",
+            "\t\t\"${1:Column2}\": [\"min\", \"max\", \"median\", \"mean\"],",
+            "\t}",
+            ")"
+        ],
+        "description": "Show custom aggregate stats for columns."
+    },
+    "Get Shape": {
+        "scope": "python",
+        "prefix": "pd: shape",
+        "body": [
+            "#df is your dataframe",
+            "df.shape"
+        ],
+        "description": "Fetches the shape of your dataframe."
+    },
+    "Get Row Count": {
+        "scope": "python",
+        "prefix": "pd: row-count",
+        "body": [
+            "#df is your dataframe",
+            "rows_count = df.shape[0]"
+        ],
+        "description": "Fetches the count of rows of your dataframe."
+    },
+    "Get Columns Count": {
+        "scope": "python",
+        "prefix": "pd: column-count",
+        "body": [
+            "#df is your dataframe",
+            "col_count = df.shape[1]"
+        ],
+        "description": "Fetches the count of columns of your dataframe."
+    },
+    "First X Rows": {
+        "scope": "python",
+        "prefix": "pd: first-x-rows",
+        "body": [
+            "#df is your dataframe",
+            "first_x_rows = df[0:${1:5}]",
+            "print(first_x_rows)"
+        ],
+        "description": "First X Rows."
+    },
+    "Last X Rows": {
+        "scope": "python",
+        "prefix": "pd: last-x-rows",
+        "body": [
+            "#df is your dataframe",
+            "last_x_rows = df.tail(${1:10})",
+            "print(last_x_rows)"
+        ],
+        "description": "Last X Rows."
+    },
+    "Define Categories": {
+        "scope": "python",
+        "prefix": "pd: set-categories",
+        "body": [
+            "#pd is your Pandas import alias (import pandas as pd)",
+            "categories = pd.Series([1,2,3], dtype=\"category\")"
+        ],
+        "description": "Define categories with Pandas."
+    },
+    "Frequency Distribution": {
+        "scope": "python",
+        "prefix": "pd: frequency-distribution",
+        "body": [
+            "#df is your dataframe",
+            "df.${1:ColumnName}.value_counts(ascending = True)"
+        ],
+        "description": "Get frequency distribution of values for a column."
+    },
+    "Sample Data": {
+        "scope": "python",
+        "prefix": "pd: data-sample",
+        "body": [
+            "#df is your dataframe",
+            "#frac is percentage of data to sample",
+            "#0.2 is 20 percent",
+            "df.sample(frac = 0.2)"
+        ],
+        "description": "Get a sample of data from your dataframe."
+    },
+    "Select Column": {
+        "scope": "python",
+        "prefix": "pd: column-select",
+        "body": [
+            "#df is your dataframe",
+            "column = df[\"${1:ColumnName}\"]"
+        ],
+        "description": "Select a specific column from dataframe."
+    },
+    "Select Columns": {
+        "scope": "python",
+        "prefix": "pd: column-select-multiple",
+        "body": [
+            "#df is your dataframe",
+            "df[[\"${1:FirstColumnName}\",\"${2:SecondColumnName}\"]]"
+        ],
+        "description": "Select multiple columns from dataframe."
+    },
+    "Select Rows Specific Columns": {
+        "scope": "python",
+        "prefix": "pd: rows-specific-columns",
+        "body": [
+            "#df is your dataframe",
+            "#0 is index of start row number, 5 is index of end row number,",
+            "df.loc[0:5,[\"\",\"${2:SecondColumnName}\"]]"
+        ],
+        "description": "Select rows by indices for specific columns in dataframe."
+    },
+    "Rows By Index": {
+        "scope": "python",
+        "prefix": "pd: rows-by-index",
+        "body": [
+            "#df is your dataframe",
+            "#0 is index of start row number, 10 is index of end row number,",
+            "df.iloc[${1:0}:${2:10},:]"
+        ],
+        "description": "Select rows by indices."
+    },
+    "Columns By Index": {
+        "scope": "python",
+        "prefix": "pd: columns-by-index",
+        "body": [
+            "#df is your dataframe",
+            "#0 is index of start column number, 5 is index of end column number,",
+            "df.iloc[:,${1:0}:${2:5}]"
+        ],
+        "description": "Select columns by indices."
+    },
+    "Create Custom Dataframe": {
+        "scope": "python",
+        "prefix": "pd: dataframe-create",
+        "body": [
+            "df = pd.DataFrame({\"Player\" : [\"Sach\",\"KingK\",\"Zak\"], \"Role\" : [\"Master Batter\",\"Run Machine\",\"Speed Machine\"]})"
+        ],
+        "description": "Create custom dataframe."
+    },
+    "Column Rename": {
+        "scope": "python",
+        "prefix": "pd: columns-rename",
+        "body": [
+            "#df is your dataframe",
+            "df.columns = ['${1:NewColumnName}','${2:SecondNewColumnName}']"
+        ],
+        "description": "Assign new column names to dataframe."
+    },
+    "Column Rename Specific": {
+        "scope": "python",
+        "prefix": "pd: columns-rename-specific",
+        "body": [
+            "#df is your dataframe",
+            "df.rename(columns = {\"${1:OldColumnName}\":\"${2:NewColumnName}\"},inplace = False)"
+        ],
+        "description": "Rename specific columns in dataframe."
+    },
+    "Drop Column": {
+        "scope": "python",
+        "prefix": "pd: columns-drop",
+        "body": [
+            "#df is your dataframe",
+            "df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)"
+        ],
+        "description": "Drop columns by name."
+    },
+    "Sort By Column": {
+        "scope": "python",
+        "prefix": "pd: sort-by-column",
+        "body": [
+            "#df is your dataframe",
+            "#set inplace = True as needed",
+            "df.sort_values(\"${1:ColumnNameOne}\",ascending = True, inplace = False)"
+        ],
+        "description": "Sort values by column."
+    },
+    "Filter Dataframe": {
+        "scope": "python",
+        "prefix": "pd: filter",
+        "body": [
+            "#df is your dataframe",
+            "df[df.${1:ColumnName} == \"${2:SomeValue}\"]"
+        ],
+        "description": "Filter dataframe based on condition/match."
+    },
+    "Apply Function to All": {
+        "scope": "python",
+        "prefix": "pd: apply-all",
+        "body": [
+            "def ${1}(x):",
+            "   return x*x",
+            "",
+            "#df is your dataframe",
+            "#example function is applicable for all INT dataframe ",
+            "df_squared = df.apply(${1:yourFunction})"
+        ],
+        "description": "Apply function to all elements in the dataframe."
+    },
+    "Apply Function Single Column": {
+        "scope": "python",
+        "prefix": "pd: apply-single-column",
+        "body": [
+            "def ${2}(x):",
+            "   return x*x",
+            "",
+            "#df is your dataframe",
+            "df[\"${1:ColumnName}\"] = df[\"${1}\"].apply(${2:yourFunction})"
+        ],
+        "description": "Apply function to single column."
+    },
+    "Apply Function Multiple Columns": {
+        "scope": "python",
+        "prefix": "pd: apply-multiple-columns",
+        "body": [
+            "def ${3}(x):",
+            "   return x*x",
+            "",
+            "#df is your dataframe",
+            "df[[\"${1:ColumnOne}\",\"${2:ColumnTwo}\"]] = df[[\"${1}\",\"${2}\"]].apply(${3:yourFunction})"
+        ],
+        "description": "Apply function to multiple columns."
+    },
+    "Apply Column Lambda": {
+        "scope": "python",
+        "prefix": "pd: apply-column-lambda",
+        "body": [
+            "#df is your dataframe",
+            "df[\"${1:ColumnOne}\"] = df[\"${1}\"].apply(lambda x: x*x)"
+        ],
+        "description": "Apply inline function/lambda to a column."
+    },
+    "Convert All Numeric": {
+        "scope": "python",
+        "prefix": "pd: convert-numeric",
+        "body": [
+            "#df is your dataframe",
+            "#pd is pandas import",
+            "df = df.apply(pd.to_numeric)"
+        ],
+        "description": "Convert all columns to Numeric type."
+    },
+    "Convert Column to Numeric": {
+        "scope": "python",
+        "prefix": "pd: convert-column-numeric",
+        "body": [
+            "#df is your dataframe",
+            "#pd is pandas import",
+            "df[\"${1:ColumnOne}\"] = pd.to_numeric(df[\"${1:ColumnOne}\"])"
+        ],
+        "description": "Convert a column to numeric type."
+    },
+    "Convert Columns to Numeric": {
+        "scope": "python",
+        "prefix": "pd: convert-columns-numeric",
+        "body": [
+            "#df is your dataframe",
+            "#pd is pandas import",
+            "df[[\"${1:ColumnOne}\", \"${2:ColumnTwo}\"]] = df[[\"${1}\", \"${2}\"]].apply(pd.to_numeric)"
+        ],
+        "description": "Convert multiple columns to numeric type."
+    },
+    "Set Column Types": {
+        "scope": "python",
+        "prefix": "pd: set-data-types",
+        "body": [
+            "#df is your dataframe",
+            "df = df.astype(",
+            "\t{",
+            "\t\t'${1:ColumnOne}': 'float', ",
+            "\t\t'${2:ColumnTwo}': 'int',",
+            "\t\t'${3:ColumnThree}': 'datetime',",
+            "\t\t'${4:ColumnFour}': 'string'",
+            "\t}",
+            ")"
+        ],
+        "description": "Assign data types to columns."
+    },
+    "Column Fill Mean Value": {
+        "scope": "python",
+        "prefix": "pd: missing-fill-mean",
+        "body": [
+            "#df is your dataframe",
+            "df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mean().round(1), inplace=False)"
+        ],
+        "description": "Fill mean value in place of missing values in dataframe column."
+    },
+    "Column Fill Median Value": {
+        "scope": "python",
+        "prefix": "pd: missing-fill-median",
+        "body": [
+            "#df is your dataframe",
+            "df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].median().round(1), inplace=False)"
+        ],
+        "description": "Fill median value in place of missing values in dataframe column."
+    },
+    "Column Fill Modal Value": {
+        "scope": "python",
+        "prefix": "pd: missing-fill-mode",
+        "body": [
+            "#df is your dataframe",
+            "df['${1:ColumnName}'] = df['${1}'].fillna(df['${1}'].mode()[0], inplace=False)"
+        ],
+        "description": "Fill modal value in place of missing values in dataframe column."
+    },
+    "Write To Excel": {
+        "scope": "python",
+        "prefix": "pd: write-to-excel",
+        "body": [
+            "#requires openpyxl package",
+            "#df is your dataframe",
+            "df.to_excel(\"${1:output.xlsx}\", sheet_name='${2:SheetName}', index=False)"
+        ],
+        "description": "Output your dataframe to an Excel file and specific sheet."
+    },
+    "Write To CSV": {
+        "scope": "python",
+        "prefix": "pd: write-to-csv",
+        "body": [
+            "#df is your dataframe",
+            "df.to_csv(\"${1:output.csv}\", sep=',', encoding='utf-8', index=False)"
+        ],
+        "description": "Output your dataframe to a CSV file."
+    },
+    "Concatenate Dataframe": {
+        "scope": "python",
+        "prefix": "pd: dataframes-concatenate",
+        "body": [
+            "#df1, df2, df3 are dataframes",
+            "frames = [df1, df2, df3]",
+            "result = pd.concat(frames)"
+        ],
+        "description": "Concatenate dataframes."
+    }
 }

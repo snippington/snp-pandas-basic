@@ -42,3 +42,4 @@ VSCode extension for Pandas snippets.
 | `pd: fill-mode` | Fill missing values with modal values |
 | `pd: write-to-excel` | Write dataframe to Excel file |
 | `pd: write-to-csv` | Write dataframe to CSV file |
+| `pd: dataframes-concatenate` | Concatenate dataframes |
