@@ -389,7 +389,7 @@
             "import matplotlib.pyplot as plt",
             "import pandas as pd",
             "",
-            "df.plot(kind='scatter',x='${1:ColumnOne}',y='${1:ColumnTwo}',color='red')",
+            "df.plot(kind='scatter',x='${1:ColumnOne}',y='${2:ColumnTwo}',color='red')",
             "plt.show()"
         ],
         "description": "Make a scatter plot."
@@ -402,7 +402,7 @@
             "import matplotlib.pyplot as plt",
             "import pandas as pd",
             "",
-            "df.plot(kind='bar',x='${1:ColumnOne}',y='${1:ColumnTwo}')",
+            "df.plot(kind='bar',x='${1:ColumnOne}',y='${2:ColumnTwo}')",
             "plt.show()"
         ],
         "description": "Make a bar plot."
