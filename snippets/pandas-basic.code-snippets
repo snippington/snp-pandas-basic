@@ -371,5 +371,14 @@
             "result = pd.concat(frames)"
         ],
         "description": "Concatenate dataframes."
+    },
+    "Read CSV Chunked": {
+        "scope": "python",
+        "prefix": "pd: read-csv-chunked",
+        "body": [
+            "#set chunksize to number of rows",
+            "df = pd.read_csv(\"${1:sample}.csv\", chunksize=${2:10)"
+        ],
+        "description": "Read CSV file in chunks."
     }
 }

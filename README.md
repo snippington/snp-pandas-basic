@@ -7,6 +7,7 @@ VSCode extension for Pandas snippets.
 | ------ | ------------ |
 | `pd: imp` | Import Pandas |
 | `pd: read-csv` | Read CSV File |
+| `pd: read-csv-chunked` | Read CSV File in Chunks |
 | `pd: read-csv-skiprows` | Read CSV with skipping rows |
 | `pd: stats` | Show aggregate stats. |
 | `pd: stats-custom` | Get Custom Aggregate Stats |
