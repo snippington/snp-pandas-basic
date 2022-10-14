@@ -380,5 +380,31 @@
             "df = pd.read_csv(\"${1:sample}.csv\", chunksize=${2:10)"
         ],
         "description": "Read CSV file in chunks."
+    },
+    "Scatter Plot": {
+        "scope": "python",
+        "prefix": "pd: scatter-plot",
+        "body": [
+            "#Ensure you have matplotlib installed.",
+            "import matplotlib.pyplot as plt",
+            "import pandas as pd",
+            "",
+            "df.plot(kind='scatter',x='${1:ColumnOne}',y='${1:ColumnTwo}',color='red')",
+            "plt.show()"
+        ],
+        "description": "Make a scatter plot."
+    },
+    "Bar Plot": {
+        "scope": "python",
+        "prefix": "pd: bar-plot",
+        "body": [
+            "#Ensure you have matplotlib installed.",
+            "import matplotlib.pyplot as plt",
+            "import pandas as pd",
+            "",
+            "df.plot(kind='bar',x='${1:ColumnOne}',y='${1:ColumnTwo}')",
+            "plt.show()"
+        ],
+        "description": "Make a bar plot."
     }
 }
