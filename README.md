@@ -1,7 +1,9 @@
 # Snippington Python Pandas Basic
-VSCode extension for Pandas snippets.
+Visual Studio Code extension for Pandas code snippets.
 
-#### Shortcuts
+This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
+
+### Data Exploratory Shortcuts
 
 | Prefix | Description |
 | ------ | ------------ |
@@ -24,6 +26,11 @@ VSCode extension for Pandas snippets.
 | `pd: rows-specific-columns` | Select rows by indices for specific column names in dataframe |
 | `pd: rows-by-index` | Select rows from dataframe by indices |
 | `pd: columns-by-index` | Select columns from dataframe by indices |
+
+### Data Manipulation Shortcuts
+
+| Prefix | Description |
+| ------ | ------------ |
 | `pd: dataframe-create` | Create custom dataframe |
 | `pd: columns-rename` | Assign new column names to dataframe |
 | `pd: columns-rename-specific` | Assign new column names to specific columns in dataframe |
@@ -38,9 +45,35 @@ VSCode extension for Pandas snippets.
 | `pd: convert-column-numeric` | Convert a single column to numeric type |
 | `pd: convert-columns-numeric` | Convert multiple columns to numeric type |
 | `pd: set-data-types` | Assign data types to columns |
+| `pd: dataframes-concatenate` | Concatenate dataframes |
+
+### Missing Data Fix Shortcuts
+
+| Prefix | Description |
+| ------ | ------------ |
 | `pd: fill-mean` | Fill missing values with mean values |
 | `pd: fill-median` | Fill missing values with median values |
 | `pd: fill-mode` | Fill missing values with modal values |
+
+### Output Shortcuts
+
+| Prefix | Description |
+| ------ | ------------ |
 | `pd: write-to-excel` | Write dataframe to Excel file |
 | `pd: write-to-csv` | Write dataframe to CSV file |
-| `pd: dataframes-concatenate` | Concatenate dataframes |
+
+### Plotting Shortcuts
+
+| Prefix | Description |
+| ------ | ------------ |
+| `pd: scatter-plot` | Create a scatter Plot |
+| `pd: bar-plot` | Create a bar plot |
+
+### Pre-reqs 
+
+Make sure you have Python, Pandas and Matplotlib installed (optional: for plots only).
+
+```bash
+pip3 install pandas
+pip3 install matplotlib
+```
