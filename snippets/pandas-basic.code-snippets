@@ -406,5 +406,20 @@
             "plt.show()"
         ],
         "description": "Make a bar plot."
+    },
+    "Line Plot Multiple": {
+        "scope": "python",
+        "prefix": "pd: line-plot-multiple",
+        "body": [
+            "#Ensure you have matplotlib installed.",
+            "import matplotlib.pyplot as plt",
+            "import pandas as pd",
+            "",
+            "ax = plt.gca()",
+            "df.plot(kind='line',x='${1:ColumnOne}',y='${2:ColumnTwo}', color='blue',ax=ax)",
+            "df.plot(kind='line',x='${1:ColumnOne}',y='${3:ColumnThree}', color='red', ax=ax)",
+            "plt.show()"
+        ],
+        "description": "Make a line plot with multiple columns."
     }
 }
