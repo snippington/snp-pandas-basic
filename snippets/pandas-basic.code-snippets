@@ -421,5 +421,15 @@
             "plt.show()"
         ],
         "description": "Make a line plot with multiple columns."
+    },
+    "Save plot to file": {
+        "scope": "python",
+        "prefix": "pd: plot-save",
+        "body": [
+            "#Ensure you have matplotlib installed.",
+            "#Here plt is your matplotlib.pyplot import",
+            "plt.savefig('${1:OutputFile}.png')"
+        ],
+        "description": "Save plot to output file."
     }
 }

@@ -69,6 +69,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: scatter-plot` | Create a scatter Plot |
 | `pd: bar-plot` | Create a bar plot |
 | `pd: line-plot-multiple` | Create a multiple line plot |
+| `pd: plot-save` | Save plot to output file |
 
 ### Pre-reqs 
 
