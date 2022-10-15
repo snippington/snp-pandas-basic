@@ -431,5 +431,14 @@
             "plt.savefig('${1:OutputFile}.png')"
         ],
         "description": "Save plot to output file."
+    },
+    "Create Pivot Table": {
+        "scope": "python",
+        "prefix": "pd: pivot-table",
+        "body": [
+            "#df is your dataframe",
+            "newDf = pd.pivot_table(df, values='${1:ColumnOne}',columns='${2:ColumnTwo}')"
+        ],
+        "description": "Create a Pivot Table."
     }
 }

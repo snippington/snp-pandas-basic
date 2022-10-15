@@ -46,6 +46,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: convert-columns-numeric` | Convert multiple columns to numeric type |
 | `pd: set-data-types` | Assign data types to columns |
 | `pd: dataframes-concatenate` | Concatenate dataframes |
+| `pd: pivot-table` | Create Pivot table |
 
 ### Missing Data Fix Shortcuts
 
