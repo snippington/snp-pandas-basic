@@ -26,6 +26,8 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: rows-specific-columns` | Select rows by indices for specific column names in dataframe |
 | `pd: rows-by-index` | Select rows from dataframe by indices |
 | `pd: columns-by-index` | Select columns from dataframe by indices |
+| `pd: group-by-count` | Group By with Count Aggregate |
+| `pd: group-by-mean` | Group By with Mean |
 
 ### Data Manipulation Shortcuts
 

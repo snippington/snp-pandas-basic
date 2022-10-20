@@ -440,5 +440,27 @@
             "newDf = pd.pivot_table(df, values='${1:ColumnOne}',columns='${2:ColumnTwo}')"
         ],
         "description": "Create a Pivot Table."
+    },
+    "Group By with Count": {
+        "scope": "python",
+        "prefix": "pd: group-by-count",
+        "body": [
+            "#df is your dataframe",
+            "#ColumnOne is the selected/displayed column.",
+            "#ColumnTwo is the aggregated column.",
+            "newDf = df.groupby(\"${1:ColumnOne}\")[\"${2:ColumnTwo}\"].count()"
+        ],
+        "description": "Group By with Count Aggregate."
+    },
+    "Group By with Mean": {
+        "scope": "python",
+        "prefix": "pd: group-by-mean",
+        "body": [
+            "#df is your dataframe",
+            "#ColumnOne is the selected/displayed column.",
+            "#ColumnTwo is the aggregated column.",
+            "newDf = df.groupby(\"${1:ColumnOne}\")[\"${2:ColumnTwo}\"].mean()"
+        ],
+        "description": "Group By with Mean Aggregate."
     }
 }
