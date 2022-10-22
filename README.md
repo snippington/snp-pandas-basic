@@ -28,6 +28,8 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: columns-by-index` | Select columns from dataframe by indices |
 | `pd: group-by-count` | Group By with Count Aggregate |
 | `pd: group-by-mean` | Group By with Mean |
+| `pd: window-expanding-mean` | Expanding Window Mean |
+| `pd: window-rolling-mean` | Expanding Window Mean |
 
 ### Data Manipulation Shortcuts
 

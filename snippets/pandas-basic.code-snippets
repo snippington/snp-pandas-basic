@@ -462,5 +462,24 @@
             "newDf = df.groupby(\"${1:ColumnOne}\")[\"${2:ColumnTwo}\"].mean()"
         ],
         "description": "Group By with Mean Aggregate."
+    },
+    "Expanding Window Mean": {
+        "scope": "python",
+        "prefix": "pd: window-expanding-mean",
+        "body": [
+            "#df is your dataframe",
+            "df['expandedMean']=df['${1:ColumnName}'].expanding().mean()"
+        ],
+        "description": "Expanding Window mean."
+    },
+    "Rolling Window Mean": {
+        "scope": "python",
+        "prefix": "pd: window-rolling-mean",
+        "body": [
+            "#df is your dataframe",
+            "#rolling(2) means 2 previous rows",
+            "df['rollingMean']=df['${1:ColumnName}'].rolling(${2:2}).mean()"
+        ],
+        "description": "Rolling Window mean."
     }
 }
