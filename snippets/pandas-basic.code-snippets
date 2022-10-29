@@ -399,11 +399,8 @@
         "prefix": "pd: bar-plot",
         "body": [
             "#Ensure you have matplotlib installed.",
-            "import matplotlib.pyplot as plt",
-            "import pandas as pd",
-            "",
-            "df.plot(kind='bar',x='${1:ColumnOne}',y='${2:ColumnTwo}')",
-            "plt.show()"
+            "#df is your dataframe",
+            "df.plot(kind='bar',x='${1:ColumnOne}',y='${2:ColumnTwo}')"
         ],
         "description": "Make a bar plot."
     },
