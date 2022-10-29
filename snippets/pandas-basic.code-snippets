@@ -496,5 +496,14 @@
             "df.plot.barh(stacked=True, x='${1:ColumnOne}', y='${2:ColumnTwo}')"
         ],
         "description": "Make a horizontal bar plot."
+    },
+    "Histogram": {
+        "scope": "python",
+        "prefix": "pd: histogram",
+        "body": [
+            "#df is your dataframe",
+            "df.plot.hist(column='${1:ColumnName}',bins='${2:10}')"
+        ],
+        "description": "Make a histogram."
     }
 }
