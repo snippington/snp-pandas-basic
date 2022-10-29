@@ -78,6 +78,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: plot-save` | Save plot to output file |
 | `pd: bar-plot-horizontal` | Horizontal bar plot |
 | `pd: histogram` | Make a histogram |
+| `pd: histogram-columns` | Make a histogram for each column |
 
 ### Pre-reqs 
 

@@ -505,5 +505,15 @@
             "df.plot.hist(column='${1:ColumnName}',bins='${2:10}')"
         ],
         "description": "Make a histogram."
+    },
+    "Column Histogram": {
+        "scope": "python",
+        "prefix": "pd: histogram-columns",
+        "body": [
+            "#df is your dataframe",
+            "#drop any non-numeric columns if needed",
+            "df.diff().hist()"
+        ],
+        "description": "Make a histogram for each column."
     }
 }
