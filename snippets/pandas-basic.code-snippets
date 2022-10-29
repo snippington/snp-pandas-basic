@@ -201,7 +201,7 @@
         "prefix": "pd: columns-drop",
         "body": [
             "#df is your dataframe",
-            "df.drop(['${1:ColumnNameOne}','${1:ColumnNameTwo}'],axis = 1)"
+            "df.drop(columns=['${1:ColumnNameOne}','${1:ColumnNameTwo}'])"
         ],
         "description": "Drop columns by name."
     },
@@ -490,5 +490,5 @@
             "result = df.loc[df.query('${1:ColumnOne} < 10 & ${2:ColumnTwo} == 20').index]"
         ],
         "description": "Filter dataframe by query based on condition/match."
-    },
+    }
 }
