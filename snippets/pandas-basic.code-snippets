@@ -490,5 +490,14 @@
             "result = df.loc[df.query('${1:ColumnOne} < 10 & ${2:ColumnTwo} == 20').index]"
         ],
         "description": "Filter dataframe by query based on condition/match."
+    },
+    "Bar Plot horizontal": {
+        "scope": "python",
+        "prefix": "pd: bar-plot-horizontal",
+        "body": [
+            "#df is your dataframe",
+            "df.plot.barh(stacked=True, x='${1:ColumnOne}', y='${2:ColumnTwo}')"
+        ],
+        "description": "Make a horizontal bar plot."
     }
 }
