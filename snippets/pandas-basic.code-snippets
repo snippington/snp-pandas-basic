@@ -481,5 +481,14 @@
             "df['rollingMean']=df['${1:ColumnName}'].rolling(${2:2}).mean()"
         ],
         "description": "Rolling Window mean."
-    }
+    },
+    "Filter Dataframe By Query": {
+        "scope": "python",
+        "prefix": "pd: filter-by-query",
+        "body": [
+            "#df is your dataframe",
+            "result = df.loc[df.query('${1:ColumnOne} < 10 & ${2:ColumnTwo} == 20').index]"
+        ],
+        "description": "Filter dataframe by query based on condition/match."
+    },
 }
