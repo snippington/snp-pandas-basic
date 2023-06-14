@@ -18,6 +18,8 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: column-count` | Get the column count of dataframe |
 | `pd: first-x-rows` | Get the first x rows of dataframe |
 | `pd: last-x-rows` | Get the last x rows of dataframe |
+| `pd: n-largest` | Get the n largest values of a column in a dataframe. |
+| `pd: n-smallest` | Get the n smallest values of a column in a dataframe. |
 | `pd: set-categories` | Define categories |
 | `pd: frequency-distribution` | Get frequency distribution of values for a column |
 | `pd: data-sample` | Get sample of data from dataframe |
@@ -38,6 +40,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: dataframe-create` | Create custom dataframe |
 | `pd: columns-rename` | Assign new column names to dataframe |
 | `pd: columns-rename-specific` | Assign new column names to specific columns in dataframe |
+| `pd: replace` | Replace values a dataframe. |
 | `pd: columns-drop` | Drop columns by name |
 | `pd: sort-by-column` | Sort values in dataframe by column |
 | `pd: filter` | Filter dataframe based on condition/match |

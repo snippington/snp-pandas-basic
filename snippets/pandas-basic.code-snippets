@@ -93,6 +93,33 @@
         ],
         "description": "Last X Rows."
     },
+	"Replace Values": {
+		"scope": "python",
+		"prefix": "pd: replace",
+		"body": [
+			"#df is your dataframe",
+			"df.replace(${1:OldValue},${2:NewVal})"
+		],
+		"description": "Replace values in a dataframe."
+	},
+	"N Largest Values": {
+		"scope": "python",
+		"prefix": "pd: n-largest",
+		"body": [
+			"#df is your dataframe",
+			"df.nlargest(${1:NumOfValues},'${2:ColumnName}')"
+		],
+		"description": "Select the N largest values from a column in a dataframe."
+	},
+	"N Smallest Values": {
+		"scope": "python",
+		"prefix": "pd: n-smallest",
+		"body": [
+			"#df is your dataframe",
+			"df.nsmallest(${1:NumOfValues},'${2:ColumnName}')"
+		],
+		"description": "Select the N smallest values from a column in a dataframe."
+	},
     "Define Categories": {
         "scope": "python",
         "prefix": "pd: set-categories",

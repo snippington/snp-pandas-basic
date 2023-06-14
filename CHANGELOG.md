@@ -1,9 +1,11 @@
 # Change Log
 
-All notable changes to the "snp-pandas-basic" extension will be documented in this file.
+## 0.0.0 to to 0.1.5
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Project initial list of commands setup.
 
-## [Unreleased]
+## 0.1.6
 
-- Initial release
+- Added snippet for N-largest in a column.
+- Added snippet for N-smallest in a column.
+- Added snippet for replacing values in a dataframe.
