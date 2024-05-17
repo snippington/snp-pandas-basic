@@ -42,6 +42,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: columns-rename-specific` | Assign new column names to specific columns in dataframe |
 | `pd: replace` | Replace values a dataframe. |
 | `pd: columns-drop` | Drop columns by name |
+| `pd: duplicates-drop` | Drop duplicate columns by name |
 | `pd: sort-by-column` | Sort values in dataframe by column |
 | `pd: filter` | Filter dataframe based on condition/match |
 | `pd: filter-by-query` | Filter dataframe by query based on conditions|

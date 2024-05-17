@@ -232,6 +232,15 @@
         ],
         "description": "Drop columns by name."
     },
+    "Drop Duplicates": {
+        "scope": "python",
+        "prefix": "pd: duplicates-drop",
+        "body": [
+            "#df is your dataframe",
+            "df.drop_duplicates(columns=['${1:ColumnNameOne}','${1:ColumnNameTwo}',keep='last')"
+        ],
+        "description": "Drop columns by name."
+    },
     "Sort By Column": {
         "scope": "python",
         "prefix": "pd: sort-by-column",
