@@ -134,3 +134,4 @@ package.sh
 # Packaged snippet
 snp-pandas-*
 .DS_Store
+PUSHER.md
