@@ -3,6 +3,8 @@ Visual Studio Code extension for Pandas code snippets.
 
 This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 
+> Notice: Starting from version **0.1.8**, AI and GPT platforms will be used to generate new shortcuts and snippets.
+
 ### Data Exploratory Shortcuts
 
 | Prefix | Description |
@@ -56,6 +58,21 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: set-data-types` | Assign data types to columns |
 | `pd: dataframes-concatenate` | Concatenate dataframes |
 | `pd: pivot-table` | Create Pivot table |
+
+### Time Series Operations
+
+| Prefix | Description |
+| ------ | ------------ |
+| `pd: parse-dates` | Read CSV with date parsing |
+| `pd: resample` | Resample time series data to a different frequency |
+| `pd: date-range` | Create a date range with pandas |
+| `pd: filter-date-range` | Filter dataframe by date range |
+| `pd: date-components` | Extract date components from datetime column |
+| `pd: time-shift` | Shift time series data by periods |
+| `pd: time-lag-features` | Create multiple lag features for time series analysis |
+| `pd: time-diff` | Calculate differences between consecutive periods |
+| `pd: time-pct-change` | Calculate percentage change between consecutive periods |
+| `pd: set-datetime-index` | Set a datetime column as index and sort |
 
 ### Missing Data Fix Shortcuts
 

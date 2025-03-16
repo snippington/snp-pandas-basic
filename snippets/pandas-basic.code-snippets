@@ -93,33 +93,33 @@
         ],
         "description": "Last X Rows."
     },
-	"Replace Values": {
-		"scope": "python",
-		"prefix": "pd: replace",
-		"body": [
-			"#df is your dataframe",
-			"df.replace(${1:OldValue},${2:NewVal})"
-		],
-		"description": "Replace values in a dataframe."
-	},
-	"N Largest Values": {
-		"scope": "python",
-		"prefix": "pd: n-largest",
-		"body": [
-			"#df is your dataframe",
-			"df.nlargest(${1:NumOfValues},'${2:ColumnName}')"
-		],
-		"description": "Select the N largest values from a column in a dataframe."
-	},
-	"N Smallest Values": {
-		"scope": "python",
-		"prefix": "pd: n-smallest",
-		"body": [
-			"#df is your dataframe",
-			"df.nsmallest(${1:NumOfValues},'${2:ColumnName}')"
-		],
-		"description": "Select the N smallest values from a column in a dataframe."
-	},
+    "Replace Values": {
+        "scope": "python",
+        "prefix": "pd: replace",
+        "body": [
+            "#df is your dataframe",
+            "df.replace(${1:OldValue},${2:NewVal})"
+        ],
+        "description": "Replace values in a dataframe."
+    },
+    "N Largest Values": {
+        "scope": "python",
+        "prefix": "pd: n-largest",
+        "body": [
+            "#df is your dataframe",
+            "df.nlargest(${1:NumOfValues},'${2:ColumnName}')"
+        ],
+        "description": "Select the N largest values from a column in a dataframe."
+    },
+    "N Smallest Values": {
+        "scope": "python",
+        "prefix": "pd: n-smallest",
+        "body": [
+            "#df is your dataframe",
+            "df.nsmallest(${1:NumOfValues},'${2:ColumnName}')"
+        ],
+        "description": "Select the N smallest values from a column in a dataframe."
+    },
     "Define Categories": {
         "scope": "python",
         "prefix": "pd: set-categories",
@@ -551,5 +551,109 @@
             "df.diff().hist()"
         ],
         "description": "Make a histogram for each column."
+    },
+    "Parse Date Column": {
+        "scope": "python",
+        "prefix": "pd: parse-dates",
+        "body": [
+            "#df is your dataframe",
+            "df = pd.read_csv(\"${1:sample.csv}\", parse_dates=['${2:date_column}'])"
+        ],
+        "description": "Read CSV with date parsing."
+    },
+    "Resample Time Series": {
+        "scope": "python",
+        "prefix": "pd: resample",
+        "body": [
+            "#df is your dataframe with a datetime index",
+            "#common freq: 'D' (day), 'W' (week), 'M' (month), 'Q' (quarter), 'Y' (year)",
+            "df_resampled = df.resample('${1:M}').${2:mean}()"
+        ],
+        "description": "Resample time series data to a different frequency."
+    },
+    "Date Range": {
+        "scope": "python",
+        "prefix": "pd: date-range",
+        "body": [
+            "#Create a date range",
+            "date_rng = pd.date_range(start='${1:2020-01-01}', end='${2:2020-12-31}', freq='${3:D}')"
+        ],
+        "description": "Create a date range with pandas."
+    },
+    "Filter Date Range": {
+        "scope": "python",
+        "prefix": "pd: filter-date-range",
+        "body": [
+            "#df is your dataframe with a datetime column",
+            "mask = (df['${1:date_column}'] >= '${2:2020-01-01}') & (df['${1:date_column}'] <= '${3:2020-12-31}')",
+            "filtered_df = df.loc[mask]"
+        ],
+        "description": "Filter dataframe by date range."
+    },
+    "Add Date Components": {
+        "scope": "python",
+        "prefix": "pd: date-components",
+        "body": [
+            "#df is your dataframe with a datetime column",
+            "df['year'] = df['${1:date_column}'].dt.year",
+            "df['month'] = df['${1:date_column}'].dt.month",
+            "df['day'] = df['${1:date_column}'].dt.day",
+            "df['dayofweek'] = df['${1:date_column}'].dt.dayofweek",
+            "df['quarter'] = df['${1:date_column}'].dt.quarter"
+        ],
+        "description": "Extract date components from datetime column."
+    },
+    "Time Series Shift": {
+        "scope": "python",
+        "prefix": "pd: time-shift",
+        "body": [
+            "#df is your dataframe",
+            "#positive periods shift forward (later in time)",
+            "#negative periods shift backward (earlier in time)",
+            "df['${1:column}_previous'] = df['${1:column}'].shift(periods=${2:1})"
+        ],
+        "description": "Shift time series data by periods."
+    },
+    "Time Series Lag Features": {
+        "scope": "python",
+        "prefix": "pd: time-lag-features",
+        "body": [
+            "#df is your dataframe",
+            "#Create lag features for time series analysis",
+            "for lag in range(1, ${1:4}):",
+            "    df[f'${2:column}_lag_{lag}'] = df['${2:column}'].shift(lag)"
+        ],
+        "description": "Create multiple lag features for time series analysis."
+    },
+    "Time Series Diff": {
+        "scope": "python",
+        "prefix": "pd: time-diff",
+        "body": [
+            "#df is your dataframe",
+            "#Calculate period-over-period differences",
+            "df['${1:column}_diff'] = df['${1:column}'].diff(periods=${2:1})"
+        ],
+        "description": "Calculate differences between consecutive periods."
+    },
+    "Time Series Pct Change": {
+        "scope": "python",
+        "prefix": "pd: time-pct-change",
+        "body": [
+            "#df is your dataframe",
+            "#Calculate percentage change between periods",
+            "df['${1:column}_pct_change'] = df['${1:column}'].pct_change(periods=${2:1}) * 100"
+        ],
+        "description": "Calculate percentage change between consecutive periods."
+    },
+    "Set Datetime Index": {
+        "scope": "python",
+        "prefix": "pd: set-datetime-index",
+        "body": [
+            "#df is your dataframe with a datetime column",
+            "df = df.set_index('${1:date_column}')",
+            "# Sort index if needed",
+            "df = df.sort_index()"
+        ],
+        "description": "Set a datetime column as index and sort."
     }
 }
