@@ -59,7 +59,7 @@ This works with __ipynb__ (Jupyter Notebook) files in Visual Studio Code too.
 | `pd: dataframes-concatenate` | Concatenate dataframes |
 | `pd: pivot-table` | Create Pivot table |
 
-### Time Series Operations
+### Time Series Operations Shortcuts
 
 | Prefix | Description |
 | ------ | ------------ |
